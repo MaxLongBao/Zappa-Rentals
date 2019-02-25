@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to instrument_path(@instrument)
     else
-      # if we haven't got a valid save to our db, we will render a new page.
       render :new
     end
   end
