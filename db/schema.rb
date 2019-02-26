@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_161903) do
   end
 
   create_table "instruments", force: :cascade do |t|
+    t.string "name"
     t.string "category"
     t.string "condition"
     t.string "location"

@@ -1,6 +1,6 @@
 <h1>Show Page Instruments</h1>
-<h1> <%= @instrument.category %> </h1>
-<% @instrument.category.each do |booking| %>
-<p><%= booking.description %> <%= link_to 'Delete', booking_path(dose), method: :delete %> </p>
-<% end %>
-<%= link_to "All instruments", '/instruments' %>
+<p> <%= @instrument.category %> </p>
+<p> <%= @instrument.condition %> </p>
+<p> <%= @instrument.location %> </p>
+<p> <%= @instrument.price %> </p>
+<%= link_to "All instruments", 'root' %>
