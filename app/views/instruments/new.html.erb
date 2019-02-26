@@ -1,1 +1,6 @@
-<h1>Page to create new </h1>
+<h1>Page to create new Instrument  </h1>
+<%= simple_form_for @instrument do |f| %>
+  <%= f.input :category %>
+  <%= f.button :submit %>
+<% end %>
+<%= link_to "All instrument", '/instruments' %>

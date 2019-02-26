@@ -5,6 +5,7 @@ class CreateInstruments < ActiveRecord::Migration[5.2]
       t.string :condition
       t.string :location
       t.string :price
+      t.boolean :available
       t.references :user, foreign_key: true
 
       t.timestamps

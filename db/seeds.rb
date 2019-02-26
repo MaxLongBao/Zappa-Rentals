@@ -27,19 +27,20 @@
 
 # puts "finish"
 require 'faker'
-puts " starting "
+puts "starting"
 
 20.times do
   user = User.new({
-    name: Faker::Name.first_name,
+    user_name: Faker::Name.first_name,
     email: Faker::Internet.email,
-    password: Faker::Internet.password
+    password: Faker::Internet.password,
+    lender: true
   })
   user.save!
 
   1.times do
     instrument = Instrument.new({
-      category: "Songs",
+      category: Faker::Music.instrument,
       condition: "Good",
       location: "Here",
       price: "A lot",
@@ -47,8 +48,27 @@ puts " starting "
       })
 
   instrument.user = user
-  instrument.save
+  instrument.save!
+  end
+
+  10.times do
+  user = User.new({
+    user_name: Faker::Name.first_name,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password,
+    lender: false
+  })
+  user.save!
   end
 end
+
+puts "users done"
+
+booking = Booking.new
+booking.instrument = Instrument.find(1)
+
+booking.user = User.find(1)
+booking.save!
+# booking.user = user.where(user_id = rand(1..30))
 
 puts "fatal error"
