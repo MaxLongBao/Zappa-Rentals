@@ -52,7 +52,6 @@ User.destroy_all
     instrument.user = user
     instrument.save!
   end
-<<<<<<< HEAD
 end
 10.times do
   user = User.new({
@@ -62,7 +61,6 @@ end
   lender: false
 })
 user.save!
-=======
 
   5.times do
     user = User.new({
@@ -73,7 +71,6 @@ user.save!
     })
     user.save!
   end
->>>>>>> 3536b81a98f65c00d6d51212b386df3c4bcc8200
 end
 # booking = Booking.new(start_date: "Monday", end_date: "Tuesday", user: User.last,
 #     instrument: Instrument.first)
