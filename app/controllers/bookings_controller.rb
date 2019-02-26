@@ -10,7 +10,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.instrument = @instrument
-    raise
     if @booking.save
       redirect_to instrument_path(@instrument)
     else

@@ -1,30 +1,35 @@
 class InstrumentsController < ApplicationController
   def index
-    @instruments = Instrument.all
+    @instruments = policy_scope(Instrument)
   end
 
   def show
     @instrument = Instrument.find(params[:id])
+    authorize @instrument
   end
 
   def new
     @instrument = Instrument.new
+    authorize @instrument
   end
 
   def create
     @instrument = Instrument.new(instrument_params)
     @instrument.save
+    authorize @instrument
 
-    redirect_to instrument_path(@instrument)
+    redirect_to root_path
   end
 
   def edit
     @instrument = instrument.find(params[:id])
+    authorize @instrument
   end
 
   def update
     @instrument = instrument.find(params[:id])
     @instrument.update(instrument_params)
+    authorize @instrument
 
     redirect_to instrument_path(@instrument)
   end
@@ -32,6 +37,7 @@ class InstrumentsController < ApplicationController
   def destroy
     @instrument = Instrument.find(params[:id])
     @instrume.destroy
+    authorize @instrument
 
     redirect_to root_path
   end
