@@ -50,16 +50,15 @@ puts "starting"
   instrument.user = user
   instrument.save!
   end
-
-  10.times do
+end
+10.times do
   user = User.new({
-    user_name: Faker::Name.first_name,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password,
-    lender: false
-  })
-  user.save!
-  end
+  user_name: Faker::Name.first_name,
+  email: Faker::Internet.email,
+  password: Faker::Internet.password,
+  lender: false
+})
+user.save!
 end
 
 puts "users done"
