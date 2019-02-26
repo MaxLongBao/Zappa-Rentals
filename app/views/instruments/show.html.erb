@@ -1,6 +1,10 @@
 <h1>Show Page Instruments</h1>
-<p> <%= @instrument.category %> </p>
-<p> <%= @instrument.condition %> </p>
-<p> <%= @instrument.location %> </p>
-<p> <%= @instrument.price %> </p>
-<%= link_to "All instruments", 'root' %>
+
+<p> Name: <%= @instrument.category %> </p>
+<p> Condition: <%= @instrument.condition %> </p>
+<p> Location: <%= @instrument.location %> </p>
+<p> Price: <%= @instrument.price %> </p>
+<p><%= @instrument.available %></p>
+<%= link_to "All instruments", '/instruments' %>
+<br>
+<%= link_to "Book this instrument", new_instrument_booking_path(@instrument.id) %>

@@ -6,8 +6,11 @@ class BookingsController < ApplicationController
 
   def create
     @instrument = Instrument.find(params[:instrument_id])
+    @user = @instrument.user
     @booking = Booking.new(booking_params)
+    @booking.user = @user
     @booking.instrument = @instrument
+    raise
     if @booking.save
       redirect_to instrument_path(@instrument)
     else
@@ -24,6 +27,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:start_date, :end_date).permit(:instrument_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
