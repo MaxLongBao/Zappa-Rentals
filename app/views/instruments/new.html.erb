@@ -1,6 +1,10 @@
 <h1>Page to create new Instrument  </h1>
 <%= simple_form_for @instrument do |f| %>
+  <%= f.input :name %>
   <%= f.input :category %>
+  <%= f.input :condition %>
+  <%= f.input :location %>
+  <%= f.input :price %>
   <%= f.button :submit %>
 <% end %>
 <%= link_to "All instrument", '/instruments' %>

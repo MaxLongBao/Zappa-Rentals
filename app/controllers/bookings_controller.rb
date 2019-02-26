@@ -2,6 +2,8 @@ class BookingsController < ApplicationController
   def new
     @instrument = Instrument.find(params[:instrument_id])
     @booking = Booking.new
+    # authorize @instrument
+    authorize @booking
   end
 
   def create
@@ -10,6 +12,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.instrument = @instrument
+    authorize @instrument
+    authorize @booking
     if @booking.save
       redirect_to instrument_path(@instrument)
     else
@@ -20,6 +24,7 @@ class BookingsController < ApplicationController
   def destroy
     @instrument = Booking.find(params[:id])
     @booking.destroy
+    authorize @booking
     redirect_to root
   end
 

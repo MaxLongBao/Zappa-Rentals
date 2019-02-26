@@ -1,4 +1,4 @@
-class InstrumentPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,10 +6,6 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def new?
-    true
-  end
-
-  def show?
     true
   end
 
@@ -26,6 +22,6 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    @record.user == @user
+    edit?
   end
 end
