@@ -28,8 +28,11 @@
 # puts "finish"
 require 'faker'
 puts "starting"
+Booking.destroy_all
+Instrument.destroy_all
+User.destroy_all
 
-20.times do
+10.times do
   user = User.new({
     user_name: Faker::Name.first_name,
     email: Faker::Internet.email,
@@ -46,10 +49,10 @@ puts "starting"
       price: "A lot",
       available: true
       })
-
-  instrument.user = user
-  instrument.save!
+    instrument.user = user
+    instrument.save!
   end
+<<<<<<< HEAD
 end
 10.times do
   user = User.new({
@@ -59,15 +62,38 @@ end
   lender: false
 })
 user.save!
+=======
+
+  5.times do
+    user = User.new({
+      user_name: Faker::Name.first_name,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password,
+      lender: false
+    })
+    user.save!
+  end
+>>>>>>> 3536b81a98f65c00d6d51212b386df3c4bcc8200
+end
+# booking = Booking.new(start_date: "Monday", end_date: "Tuesday", user: User.last,
+#     instrument: Instrument.first)
+# booking.save!
+
+borrowers = User.all.select {|user| user.lender == false }
+instruments = Instrument.all
+daysOfWeek = ["Monday", "Tuesday"]
+
+5.times do
+  booking = Booking.new()
+  booking.user = borrowers.sample
+  booking.instrument  = instruments.sample
+  booking.start_date = daysOfWeek.sample
+  booking.end_date = daysOfWeek.sample
+  booking.save!
 end
 
+
 puts "users done"
-
-booking = Booking.new
-booking.instrument = Instrument.find(1)
-
-booking.user = User.find(1)
-booking.save!
 # booking.user = user.where(user_id = rand(1..30))
 
 puts "fatal error"
