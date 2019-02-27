@@ -1,14 +1,28 @@
-<h1>Show Page Instruments</h1>
+<div class="container">
 
-<p> Name: <%= @instrument.category %> </p>
-<p> Condition: <%= @instrument.condition %> </p>
-<p> Location: <%= @instrument.location %> </p>
-<p> Price: <%= @instrument.price %> </p>
-<p><%= @instrument.available %></p>
-<%= link_to "All instruments", '/instruments' %>
-<br>
-<%= link_to "Book this instrument", new_instrument_booking_path(@instrument.id) %>
+      <p> <%= link_to "All instruments", '/instruments' %> </p>
 
-<% if policy(@instrument).edit? %>
-  <%= link_to "Edit", edit_instrument_path(@instrument) %>
-<% end %>
+
+<!--   <h1> <%= link_to "Book this instrument", new_instrument_booking_path(@instrument.id) %> </h1> -->
+
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> <%= @instrument.category %> </h5>
+       <p class="card-text">Condition:  <%= @instrument.condition %> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+       <a href="#" class= <%= link_to "Book this instrument", new_instrument_booking_path(@instrument.id) %> </a>
+      </div>
+    </div>
+
+
+<!--     <p> Name:  <%= @instrument.category %> </p>
+    <p> Condition:  <%= @instrument.condition %> </p>
+    <p> Location:  <%= @instrument.location %> </p>
+    <p> Price:  <%= @instrument.price %> </p>
+    <p><%= @instrument.available %></p> -->
+<!--
+    Condition:  <%= @instrument.condition %>
+    <p> <%= link_to "Book", 'new_instrument_path' %> </p> -->
+
+</div>
