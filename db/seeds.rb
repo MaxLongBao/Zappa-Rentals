@@ -43,7 +43,7 @@ User.destroy_all
 
   1.times do
     instrument = Instrument.new({
-      name: Faker::Quote.yoda,
+      name: Faker::Music.instrument,
       category: Faker::Music.instrument,
       condition: "Good",
       location: "Here",
@@ -54,25 +54,25 @@ User.destroy_all
     instrument.save!
   end
 end
-10.times do
-  user = User.new({
-  user_name: Faker::Name.first_name,
-  email: Faker::Internet.email,
-  password: Faker::Internet.password,
-  lender: false
-})
-user.save!
+# 10.times do
+#   user = User.new({
+#   user_name: Faker::Name.first_name,
+#   email: Faker::Internet.email,
+#   password: Faker::Internet.password,
+#   lender: false
+# })
+# user.save!
 
-  5.times do
-    user = User.new({
-      user_name: Faker::Name.first_name,
-      email: Faker::Internet.email,
-      password: Faker::Internet.password,
-      lender: false
-    })
-    user.save!
-  end
-end
+#   5.times do
+#     user = User.new({
+#       user_name: Faker::Name.first_name,
+#       email: Faker::Internet.email,
+#       password: Faker::Internet.password,
+#       lender: false
+#     })
+#     user.save!
+#   end
+# end
 # booking = Booking.new(start_date: "Monday", end_date: "Tuesday", user: User.last,
 #     instrument: Instrument.first)
 # booking.save!
@@ -81,15 +81,21 @@ borrowers = User.all.select {|user| user.lender == false }
 instruments = Instrument.all
 daysOfWeek = ["Monday", "Tuesday"]
 
-5.times do
-  booking = Booking.new()
-  booking.user = borrowers.sample
-  booking.instrument  = instruments.sample
-  booking.start_date = daysOfWeek.sample
-  booking.end_date = daysOfWeek.sample
-  booking.save!
-end
+# 5.times do
+#   booking = Booking.new()
+#   booking.user = borrowers.sample
+#   booking.instrument  = instruments.sample
+#   booking.start_date = daysOfWeek.sample
+#   booking.end_date = daysOfWeek.sample
+#   booking.save!
+# end
 
+user = User.new({
+      user_name: "Jimmi Hendrix",
+      email: "Jimmi.hendrix@hendrix.com",
+      password: 123456,
+      lender: false
+    })
 
 puts "users done"
 # booking.user = user.where(user_id = rand(1..30))
