@@ -1,1 +1,37 @@
 // Specific CSS for your home-page
+// .banner {
+  // height: 100vh;
+  // display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  // background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("images/kelly-sikkema-216022-unsplash.jpg");
+  // background-size: cover;
+  // background-position: center;
+
+  .banner {
+  height: 100vh;
+  display: flex;
+  // border-top: 186px;
+  justify-content: space-around;
+  align-items: center;
+  background-image: image-url('background.jpg');
+  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+  }
+  p {
+    color: white;
+    opacity: .7;
+    font-size: 27px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+  }
+  .btn {
+    padding: 12px 40px;
+    border-radius: 8px;
+  }
+}
