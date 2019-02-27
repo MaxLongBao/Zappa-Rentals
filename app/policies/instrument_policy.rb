@@ -6,7 +6,7 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def new?
-    user.lender == true
+    true
   end
 
   def show?
@@ -18,7 +18,7 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    @record.user == @user
   end
 
   def update?
@@ -26,6 +26,6 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    @record.user == @user
   end
 end

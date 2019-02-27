@@ -1,6 +1,7 @@
 class InstrumentsController < ApplicationController
   def index
     @instruments = policy_scope(Instrument)
+    # @booking = policy_scope(Booking)
   end
 
   def show
@@ -15,10 +16,13 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.new(instrument_params)
-    @instrument.save
+    @instrument.user = current_user
     authorize @instrument
-
-    redirect_to root_path
+    if @instrument.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
