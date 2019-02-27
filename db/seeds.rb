@@ -93,9 +93,11 @@ daysOfWeek = ["Monday", "Tuesday"]
 user = User.new({
       user_name: "Jimmi Hendrix",
       email: "Jimmi.hendrix@hendrix.com",
-      password: 123456,
+      password: "123456",
       lender: false
     })
+
+user.save
 
 puts "users done"
 # booking.user = user.where(user_id = rand(1..30))
