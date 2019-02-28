@@ -1,10 +1,20 @@
 .container-instruments {
   background: $light-gray;
   height: 100%;
+  margin-bottom: 30px;
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.flex-card {
+  margin: 10px;
+  color: #35393C;
+  display: flex;
+  justify-content: space-between;
 }
