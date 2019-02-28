@@ -3,18 +3,22 @@
     <% @instruments.each do |instrument| %>
       <div class="instrument-cards" style="position: relative;">
         <img src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80">
-        <div class="instrument-cards-infos">
-          <div>
-            <h2> <%= instrument.name %> </h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
+        <div>
+          <div class="flex-card">
+            <h2> <%= instrument.post_name %> </h2>
           </div>
-          <h2 class="instrument-cards-pricing">£99.99</h2>
+          <div>
+            <div class="card-flexbox">
+              <h2> <%= instrument.category %> </h2>
+              <h2 class="instrument-cards-pricing">£99.99</h2>
+            </div>
+          </div>
         </div>
         <%= link_to "",instrument_path(instrument), class: "card-link" %>
       </div>
     <% end %>
   </div>
   <div>
-    <%= link_to "Create a new instrument", new_instrument_path %>
+    <%= link_to "Create a new instrument", new_instrument_path, class: "btn btn-primary button-create" %>
   </div>
 </div>

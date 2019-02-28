@@ -1,7 +1,9 @@
 class CreateInstruments < ActiveRecord::Migration[5.2]
   def change
     create_table :instruments do |t|
-      t.string :name
+      t.string :post_name
+      t.string :image
+      t.string :description
       t.string :category
       t.string :condition
       t.string :location

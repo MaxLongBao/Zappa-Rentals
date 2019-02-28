@@ -43,7 +43,9 @@ User.destroy_all
 
   1.times do
     instrument = Instrument.new({
-      name: Faker::Music.instrument,
+      post_name: "Amazing instrument!",
+      image: "Image here",
+      description: Faker::Quote.yoda,
       category: Faker::Music.instrument,
       condition: "Good",
       location: "Here",
