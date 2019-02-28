@@ -43,13 +43,13 @@ User.destroy_all
 
   1.times do
     instrument = Instrument.new({
-      post_name: "Amazing instrument!",
+      post_name: Faker::Music.instrument,
       image: "Image here",
       description: Faker::Quote.yoda,
       category: Faker::Music.instrument,
       condition: "Good",
       location: "Here",
-      price: "A lot",
+      price: Faker::Number.between(20, 99),
       available: true
       })
     instrument.user = user
