@@ -1,5 +1,5 @@
 <div class="container-instruments">
-  <div class="container-instruments">
+  <div class="container-instruments card-grid">
     <% @instruments.each do |instrument| %>
     <div class="card-category">
       <p> <%= link_to instrument.name, instrument_path(instrument) %> </p>
