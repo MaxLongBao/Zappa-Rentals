@@ -1,9 +1,16 @@
 <div class="container-instruments">
   <div class="container-instruments card-grid">
     <% @instruments.each do |instrument| %>
-    <div class="card-category">
-      <p> <%= link_to instrument.name, instrument_path(instrument) %> </p>
-    </div>
+      <div class="instrument-cards">
+        <img src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80">
+        <div class="instrument-cards-infos">
+          <div>
+            <h2> <%= link_to instrument.name, instrument_path(instrument) %> </h2>
+            <p>Product description with <strong>relevant info</strong> only.</p>
+          </div>
+          <h2 class="instrument-cards-pricing">£99.99</h2>
+        </div>
+      </div>
     <% end %>
 
     <%= link_to "Create a new instrument", new_instrument_path %>
