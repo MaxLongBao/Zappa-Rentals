@@ -123,7 +123,7 @@ instrument1 = Instrument.new({
       description: "This is a Warwick Streamer 5 string standard. Great look and feel with nice low tones.",
       category: "Bass",
       condition: "Good",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -136,7 +136,7 @@ instrument2 = Instrument.new({
       description: "The Axiom 61 is an advanced 61-key USB mobile MIDI controller with semi-weighted action and assignable aftertouch. Eight rubberized trigger pads are ideal for creating drum tracks and firing samples. ",
       category: "Keyboard",
       condition: "Good",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -149,7 +149,7 @@ instrument3 = Instrument.new({
       description: "Fender Stratocaster In case. Original authentic piece of kit.",
       category: "Electric guitar",
       condition: "Very Good",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -162,7 +162,7 @@ instrument4 = Instrument.new({
       description: "A standard-size wooden acoustic guitar. Great for sing-alongs, camping, or even small-scale performances. For personal use, so taken care of well. Metal strings as opposed to Nylon, not cut-off fretboard. Comes with a clip-on Capo! Played pretty often so strings will be 'played in'. Comes with a guitar bag for easier transport!",
       category: "Acoustic guitar",
       condition: "Good",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -175,7 +175,7 @@ instrument5 = Instrument.new({
       description: "An essentially new Erhu I bought in Hangzhou last year and never really used. Might need some tuning",
       category: "Other string instruments",
       condition: "Average",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -188,7 +188,7 @@ instrument6 = Instrument.new({
       description: "Gretsch Renown Maple Drum Kit.",
       category: "Drums",
       condition: "Very Good",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -201,7 +201,7 @@ instrument7 = Instrument.new({
       description: "Bass Guitar - Dead On Reissue 58.",
       category: "Bass",
       condition: "Very Good",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -214,7 +214,7 @@ instrument8 = Instrument.new({
       description: "The Band violin pickup is an instant-fit pick-up which Velcro’s to itself around the body of the instrument. It requires no alteration of the instrument itself and generates a strong passive (no batteries required) signal which can usually be plugged straight into a mixing desk or combo amp.",
       category: "Violin",
       condition: "Good",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -227,7 +227,7 @@ instrument9 = Instrument.new({
       description: "The Ibanez Artcore AF75-BS is a fully hollow bodied archtop guitar with the traditional single cutaway and 2 humbucker design. Chip on upper lefthand corner of the body.",
       category: "Semi-Acoustic Guitar",
       condition: "Good",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
@@ -240,7 +240,7 @@ instrument10 = Instrument.new({
       description: "I'm listing my well loved Boosey and Hawkes flute for rental. This is a great little flute, easy to play with a very nice tone; perfect for a new learner, or a more advanced player looking for a flute to play while visiting the city.",
       category: "Flute",
       condition: "Average",
-      location: "Here",
+      location: Faker::Address.city,
       price: Faker::Number.between(20, 99),
       available: true
       })
