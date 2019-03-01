@@ -1,4 +1,12 @@
 class BookingsController < ApplicationController
+  def index
+    @user = User.find(params[:user_id])
+    # @bookings = Booking.all.select do |booking|
+    #   booking.user_id == @user.id
+    # end
+    @bookings = policy_scope(Booking)
+  end
+
   def create
     @instrument = Instrument.find(params[:instrument_id])
     @user = @instrument.user
@@ -8,7 +16,7 @@ class BookingsController < ApplicationController
     authorize @instrument
     authorize @booking
     if @booking.save
-      redirect_to instrument_path(@instrument)
+      redirect_to user_bookings_path(@booking)
     else
       render :new
     end
