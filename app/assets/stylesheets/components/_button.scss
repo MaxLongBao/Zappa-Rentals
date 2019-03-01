@@ -6,6 +6,11 @@
   font-size: 15px;
 }
 
+.buttons-margin:hover {
+  color: #222;
+  text-decoration: none;
+}
+
 .btn-start {
   background-color: $orange;
   border: none;
@@ -27,5 +32,5 @@
 
 .btn-start:hover {
   // color: red;
-  background: #f8af13;
+  background: #F8AF13;
 }
