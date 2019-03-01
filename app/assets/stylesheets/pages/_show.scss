@@ -22,8 +22,6 @@
 .instrument {
   img {
     height: 500px;
-    // width: 600px;
-    // object-fit: cover;
   }
 }
 
@@ -33,4 +31,14 @@
 
 .margin-top-show {
   margin-top: 20px;
+}
+
+.location-font {
+  color: #888888;
+  font-family: sans-serif;
+  font-size: 14px !important;
+}
+
+.price {
+  color: #6CC7BE;
 }

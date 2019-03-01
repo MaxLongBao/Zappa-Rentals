@@ -1,17 +1,21 @@
 <div class="row margin-top-show">
   <div class="col-sm-6 card">
     <div class="instrument">
+      <h2 class="card-text"><%= @instrument.category %></h2>
       <%= image_tag @instrument.image %>
     </div>
     <div class="card-body">
       <h5 class="card-title"> <%= @instrument.category %> </h5>
-      <p class="card-text">Condition:  <%= @instrument.condition %> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text"><%= @instrument.description %>.</p>
+      <p class="card-text">Condition: <%= @instrument.condition %></p>
+      <p class="card-text">Location: <%= @instrument.location %></p>
+      <p class="card-text" id="price-card">Price: £<%= @instrument.price %></p>
     </div>
   </div>
 
   <div class="col-sm-6 card">
     <h1>  Create new Booking  </h1>
     <%= render'shared/form' %>
-    <p> <%= link_to "All instruments", '/instruments', class: "btn btn-primary btn-start spacing-button-show" %> </p>
+    <p> <%= link_to "All instruments", '/instruments', class: "btn btn-primary btn-start spacing-button-show button-allinstruments" %> </p>
   </div>
 </div>
