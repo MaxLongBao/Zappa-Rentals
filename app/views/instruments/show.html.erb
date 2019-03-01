@@ -1,7 +1,8 @@
-<p> <%= link_to "All instruments", '/instruments' %> </p>
-<div class="row">
+<div class="row margin-top-show">
   <div class="col-sm-6 card">
-    <img class="card-img-top" src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="Card image cap">
+    <div class="instrument">
+      <%= image_tag @instrument.image %>
+    </div>
     <div class="card-body">
       <h5 class="card-title"> <%= @instrument.category %> </h5>
       <p class="card-text">Condition:  <%= @instrument.condition %> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -11,5 +12,6 @@
   <div class="col-sm-6 card">
     <h1>  Create new Booking  </h1>
     <%= render'shared/form' %>
+    <p> <%= link_to "All instruments", '/instruments', class: "btn btn-primary btn-start spacing-button-show" %> </p>
   </div>
 </div>
