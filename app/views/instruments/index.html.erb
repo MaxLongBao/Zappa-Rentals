@@ -2,23 +2,41 @@
   <div class="container-instruments card-grid">
     <% @instruments.each do |instrument| %>
       <div class="instrument-cards" style="position: relative;">
-        <%= image_tag instrument.image %>
-        <div>
-          <div class="flex-card">
-            <h2> <%= instrument.post_name %> </h2>
-          </div>
+        <% if instrument.image != nil %>
+          <%= image_tag instrument.image %>
           <div>
-            <div class="card-flexbox">
-              <div>
-                <h2 class="location-font"><%= instrument.location %></h2>
-              </div>
-              <div>
-                <h2 class="price">£<%= instrument.price %></h2>
+            <div class="flex-card">
+              <h2> <%= instrument.post_name %> </h2>
+            </div>
+            <div>
+              <div class="card-flexbox">
+                <div>
+                  <h2 class="location-font"><%= instrument.location %></h2>
+                </div>
+                <div>
+                  <h2 class="price">£<%= instrument.price %></h2>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <%= link_to "",instrument_path(instrument), class: "card-link" %>
+          <%= link_to "",instrument_path(instrument), class: "card-link" %>
+        <% else %>
+          <div>
+            <div class="flex-card">
+              <h2> <%= instrument.post_name %> </h2>
+            </div>
+            <div>
+              <div class="card-flexbox">
+                <div>
+                  <h2 class="location-font"><%= instrument.location %></h2>
+                </div>
+                <div>
+                  <h2 class="price">£<%= instrument.price %></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%= link_to "",instrument_path(instrument), class: "card-link" %>
       </div>
     <% end %>
   </div>
